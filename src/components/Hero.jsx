@@ -96,7 +96,7 @@ const Hero = ({darkMode}) => {
                 rounded-full text-base cm:text-lg font-semibold transition-all
                 duration-300 transform'>
                     <DownloadIcon className='w-4 h-4 sm:h-5 sm:w-5 mr-2'/>
-                    Download CV
+                    Télécharger Mon CV
 
                                 </button>
                             </a>
@@ -108,7 +108,7 @@ const Hero = ({darkMode}) => {
                 rounded-full text-base cm:text-lg font-semibold transition-all
                 duration-300 transform`} >
                     <Mail className='w-4 h-4 sm:w-5 sm:h-5 mr-2'/>
-                    Contact Me
+                    Contactez Moi
 
                                 </button>
 

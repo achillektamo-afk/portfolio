@@ -94,7 +94,7 @@ const About = ({darkMode}) => {
               lg:text-4xl font-bold text-orange-400'>5+</div>
               <div className={`text-xs sm:text-sm lg:text-base
           ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >Years Experience</div>
+              >Année Experience</div>
 
             </div>
              {/* Projects Completed */}
@@ -105,7 +105,7 @@ const About = ({darkMode}) => {
               lg:text-4xl font-bold text-orange-400'>50+</div>
               <div className={`text-xs sm:text-sm lg:text-base
           ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >Projects Completed
+              >Projets Terminés
               </div>
 
             </div>
@@ -122,7 +122,7 @@ const About = ({darkMode}) => {
             : 'text-gray-800 bg-white/90'}`}
             data-aos='fade-up'
             data-aos-delay='800'>
-            Learn More
+            En Savoir Plus
           </button>
 
         </article>

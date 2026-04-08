@@ -15,14 +15,14 @@ const Contact = ({ darkMode }) => {
           mb-2 sm:mb-3"
           style={{
             color: darkMode ? 'white' : '#1f2937'
-          }}> Get In<span
+          }}> Contactez<span
           style={{
       background:'linear-gradient(to right, #f97316, #f59e0b)',
       WebkitBackgroundClip:'text',
       backgroundClip:'text',
       color:'transparent'
 
-          }}> Touch</span>
+          }}> Moi</span>
 
           </h2>
           <p
@@ -30,7 +30,7 @@ const Contact = ({ darkMode }) => {
           style={{
             color:darkMode ? '#d1d5db' : '#6b7280'
           }}>
-            Let's discuss your project
+            Discutons De Vos Projet
           </p>
 
         </div>
@@ -58,7 +58,7 @@ const Contact = ({ darkMode }) => {
               {/* First Name */}
               <input
               type="text"
-              placeholder='First Name'
+              placeholder='Prenom'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -72,7 +72,7 @@ const Contact = ({ darkMode }) => {
               {/* Last Name */}
               <input
               type="text"
-              placeholder='Last Name'
+              placeholder='Nom'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -88,7 +88,7 @@ const Contact = ({ darkMode }) => {
             {/* Email Address */}
             <input
               type="email"
-              placeholder='Email Address'
+              placeholder='Adresse Mail'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -103,7 +103,7 @@ const Contact = ({ darkMode }) => {
               {/* Phone Number */}
             <input
               type="tel"
-              placeholder='Phone Number'
+              placeholder='Numéro De Téléphone'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -118,7 +118,7 @@ const Contact = ({ darkMode }) => {
                {/*  Message */}
             <textarea
               rows='4'
-              placeholder='Your Message'
+              placeholder='Votre Message'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -139,7 +139,7 @@ const Contact = ({ darkMode }) => {
               font--semibold rounded-lg text-sm sm:text-base
               hover:shadow-lg hover:shadow-orange-500/25
               hover:scale-[1.02] transition-all'>
-                Send Message
+                Envoyez Votre Message
 
               </button>
 

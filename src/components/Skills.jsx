@@ -67,7 +67,7 @@ const Skills = ({darkMode}) => {
             WebkitBackgroundClip: 'text',
             backgroundClip:'text',
             color:'transparent'
-                        }}>Skills</span> 
+                        }}>Compétences</span> 
                     </h1>
                     <p
                     className='text-lg max-w-2xl mx-auto leading-relaxed'

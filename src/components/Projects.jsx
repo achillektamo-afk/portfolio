@@ -7,7 +7,7 @@ const Projects = ({darkMode}) => {
     const projects=[
   {
     id: 1,
-    title: 'Système de recherche d’images médicales (CBIR)',
+    title: 'Système de recherche d’images médicales',
     desc: 'Application web permettant de rechercher des images médicales similaires grâce à des techniques avancées d’extraction et de similarité.',
     image: projet1,
     tags: ['Python', 'Django', 'SQLite'],
@@ -54,7 +54,7 @@ const Projects = ({darkMode}) => {
                     backgroundClip:'text',
                     color: 'transparent'
                 }}>
-                    Projects    
+                    Projets    
                     </span>
                 </h2>
                 <p className='max-w-xl mx-auto'
@@ -155,7 +155,7 @@ const Projects = ({darkMode}) => {
                                 data-aos='zoom-in'
                                 data-aos-delay='400'>
                                     <FaGithub/>
-                                    <span>View All Projects</span>
+                                    <span>Voir Tous Les Projets</span>
                                     <FaExternalLinkAlt className='text-sm'/>
                                 </a>
 

@@ -7,10 +7,10 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
     const [isMenuOpen, setIsMenuOpen]= useState(false)
 
     const navItems=[
-        {name:'Home', link:"#home"},
-        {name:'About', link:"#about"},
-        {name:'Skills', link:"#skills"},
-        {name:'Projects', link:"#projects"},
+        {name:'Accueil', link:"#home"},
+        {name:'A propos', link:"#about"},
+        {name:'Compétences', link:"#skills"},
+        {name:'Projets', link:"#projects"},
         {name:'Contact', link:"#contact"}
 
     ];
@@ -113,7 +113,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                     className={`hidden lg:block px-6 py-2 font-semibold
                     rounded-full bg-linear-to-r ${colors.button}
                     text-white shadpw-md hover:shadow-lg transition-shadow`}>
-                        Hire Me
+                       Engagez-moi
                     </motion.a>
                 </div>
                 {/* Mobile Menu Button */}
@@ -188,7 +188,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                         className={`block py-3 px-4 text-center font-semibold
                         counded-lg bg-linear-to-r ${colors.button}
                         text-white shadox-md`}>
-                            Hire Me
+                           Engagez-moi
 
                         </motion.a>
                     </div>
