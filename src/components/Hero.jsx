@@ -3,7 +3,7 @@ import tiktok from '../assets/Tiktok.png'
 import github from '../assets/Github.png'
 import youtube from '../assets/Youtube.png'
 import CV from '../assets/CV.pdf'
-import hero from '../assets/Hero.png'
+import hero from '../assets/Hero.jpg'
 import { DownloadIcon, Mail } from 'lucide-react'
 import { useTranslation } from "react-i18next";
 
@@ -103,7 +103,7 @@ const Hero = ({darkMode}) => {
                     <div className='relative w-4/5 sm:w-3/4 lg:w-full'>
                         <div className='relative overflow-hidden'>
                             <img src={hero} alt="Hero image"
-                            className='w-full h-[500px] sm:h-[600px] lg:h-[600px] object-cover transform
+                            className='w-full h-auto object-cover transform
                             hover:scale-105 transition-transform duration-500' />
 
                         </div>
