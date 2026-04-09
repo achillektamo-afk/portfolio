@@ -1,7 +1,9 @@
 import React from 'react'
 import { FaGithub, FaHeart, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { useTranslation } from "react-i18next";
 
 const Footer = ({ darkMode }) => {
+  const { t } = useTranslation();
     const currentYear= new Date().getFullYear()
   return (
     <footer
@@ -26,7 +28,7 @@ const Footer = ({ darkMode }) => {
               style={{
               color: darkMode ? '#9ca3af' : '#6b7280'
               }}>
-                Full Stack Developper & UI/UX Designer
+                {t("footer_role")}
               </p>
           </div>
           <div className="flex gap-4">
@@ -66,9 +68,9 @@ const Footer = ({ darkMode }) => {
           <div className="text-center md:text-right">
             <p className="text-sm flex items-center justify-end
             gap-1 text-[#6b7280] dark:text-[#9ca3af]">
-              @{currentYear} Fait avec
+              @{currentYear} {t("made_with")}
               <FaHeart className="text-red-500"/>
-              Par <span className="mt-1 text-[#f97316]">Achille kemkoum Tamo</span>
+              {t("by")} <span className="mt-1 text-[#f97316]">Achille  Tamo</span>
             </p>
           </div>
 

@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react"
 import { Sun, Moon, X, Menu } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
+    const { t, i18n } = useTranslation();
     const [activeSection, setActiveSection]= useState('home');
     const [isMenuOpen, setIsMenuOpen]= useState(false)
 
     const navItems=[
-        {name:'Accueil', link:"#home"},
-        {name:'A propos', link:"#about"},
-        {name:'Compétences', link:"#skills"},
-        {name:'Projets', link:"#projects"},
-        {name:'Contact', link:"#contact"}
-
-    ];
+    {name: t("nav_home"), link:"#home"},
+    {name: t("nav_about"), link:"#about"},
+    {name: t("nav_skills"), link:"#skills"},
+    {name: t("nav_projects"), link:"#projects"},
+    {name: t("nav_contact"), link:"#contact"}
+];
     const lightColors={
         navBg:'bg-linear-to-br from-orange-200 to-white',
         textPrimary:'text-gray-900',
@@ -84,7 +85,28 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                     ))}
 
                 </div>
-                <div className="flex items-center space-x-2">
+               <div className="flex items-center space-x-2">
+    
+    {/* 🌍 Language Switch */}
+    <div className="flex gap-2 mr-2">
+        <button
+            onClick={() => {
+                i18n.changeLanguage("fr");
+                localStorage.setItem("lang", "fr");
+            }}
+        >
+            🇫🇷
+        </button>
+
+        <button
+            onClick={() => {
+                i18n.changeLanguage("en");
+                localStorage.setItem("lang", "en");
+            }}
+        >
+            🇺🇸
+        </button>
+    </div>
                     {/* Dark mode Toogle */}
                     <motion.button 
                     whileHover={{ scale: 1.1}}
@@ -113,7 +135,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                     className={`hidden lg:block px-6 py-2 font-semibold
                     rounded-full bg-linear-to-r ${colors.button}
                     text-white shadpw-md hover:shadow-lg transition-shadow`}>
-                       Engagez-moi
+                       {t("hire_me")}
                     </motion.a>
                 </div>
                 {/* Mobile Menu Button */}
@@ -138,6 +160,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                         )}
 
                     </motion.button>
+                    
 
                 </div>
             </div>
@@ -188,7 +211,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
                         className={`block py-3 px-4 text-center font-semibold
                         counded-lg bg-linear-to-r ${colors.button}
                         text-white shadox-md`}>
-                           Engagez-moi
+                           {t("hire_me")}
 
                         </motion.a>
                     </div>

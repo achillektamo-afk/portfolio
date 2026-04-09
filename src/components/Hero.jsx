@@ -3,11 +3,13 @@ import tiktok from '../assets/Tiktok.png'
 import github from '../assets/Github.png'
 import youtube from '../assets/Youtube.png'
 import CV from '../assets/CV.pdf'
-import hero from '../assets/Hero.jpg'
+import hero from '../assets/Hero.png'
 import { DownloadIcon, Mail } from 'lucide-react'
+import { useTranslation } from "react-i18next";
 
 
 const Hero = ({darkMode}) => {
+    const { t } = useTranslation();
     const socialicons =[
         { icon: instagram, alt:'Instagram'},
         { icon: tiktok, alt:'Tiktok'},
@@ -43,43 +45,18 @@ const Hero = ({darkMode}) => {
             lg:mt-14 mt-14'>
                 <div className='lg:w-1/2 w-full flex flex-col items-center
                 lg:items-start text-center lg:text-left mb-12 lg:mb-0'>
-                    <div className='flex justify-center lg:justify-start
-                    gap-4 sm:gap-6 mb-6 sm:mb-7 w-full'>
-                        {socialicons.map((social, index)=>(
-                            <a
-                            key={index}
-                            href='#'
-                            target='_blank'
-                            data-aos-delay={`${400+ index*100}`}
-                            className='transform hover:scale-110
-                            transition-transform duration-300'>
-                                <img
-                                src={social.icon}
-                                alt={social.alt}
-                                className={`w-8 h-8 sm:w-10 sm:h-10
-                                object-contain ${darkMode
-                                    ? ''
-                                    :'filter brightness-75'
-                                }`}/>
-
-                            </a>
-                        ))}
-
-                    </div>
+                    
                     <h1 className={`title-font text-3xl sm:text-4xl
                         lg:text-5xl mb-4 font-bold ${Theme.textPrimary}`}
                         data-aos='fade-up'
                         data-aos-delay='500'>
-                            Salut, Je suis ACHILLE KEMKOUM TAMO
+                            {t("hero_title")}
                     </h1>
                     <p className={`mb-6 sm:mb-8 leading-relaxed max-w-md
                         sm:max-w-lg ${Theme.textSecondary}`}
                         data-aos='fade-up'
                         data-aos-delay='600'>
-                            Je suis un développeur passionné par la création d’applications
-                            web modernes et performantes. Curieux et motivé, j’aime apprendre
-                            de nouvelles technologies et relever des défis pour améliorer mes 
-                            compétences
+                            {t("hero_description")}
 
                     </p>
                     {/* Buttons */}
@@ -96,7 +73,7 @@ const Hero = ({darkMode}) => {
                 rounded-full text-base cm:text-lg font-semibold transition-all
                 duration-300 transform'>
                     <DownloadIcon className='w-4 h-4 sm:h-5 sm:w-5 mr-2'/>
-                    Télécharger Mon CV
+                    {t("download_cv")}
 
                                 </button>
                             </a>
@@ -108,7 +85,7 @@ const Hero = ({darkMode}) => {
                 rounded-full text-base cm:text-lg font-semibold transition-all
                 duration-300 transform`} >
                     <Mail className='w-4 h-4 sm:w-5 sm:h-5 mr-2'/>
-                    Contactez Moi
+                    {t("contact_me")}
 
                                 </button>
 
@@ -126,7 +103,7 @@ const Hero = ({darkMode}) => {
                     <div className='relative w-4/5 sm:w-3/4 lg:w-full'>
                         <div className='relative overflow-hidden'>
                             <img src={hero} alt="Hero image"
-                            className='w-full h-auto object-cover transform
+                            className='w-full h-[500px] sm:h-[600px] lg:h-[600px] object-cover transform
                             hover:scale-105 transition-transform duration-500' />
 
                         </div>

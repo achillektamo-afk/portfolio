@@ -2,13 +2,15 @@ import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa'
 import projet1 from '../assets/Projet1.png'
 import projet2 from '../assets/Projet2.png'
 import projet3 from '../assets/Projet3.png'
+import { useTranslation } from "react-i18next";
 
 const Projects = ({darkMode}) => {
+    const { t } = useTranslation();
     const projects=[
   {
     id: 1,
-    title: 'Système de recherche d’images médicales',
-    desc: 'Application web permettant de rechercher des images médicales similaires grâce à des techniques avancées d’extraction et de similarité.',
+    title: t("project1_title"),
+    desc: t("project1_desc"),
     image: projet1,
     tags: ['Python', 'Django', 'SQLite'],
     link:'https://github.com/achillektamo-afk/Systeme-de-recherche-d-images-medicales-CBIR-',
@@ -16,8 +18,8 @@ const Projects = ({darkMode}) => {
 
   {
     id: 2,
-    title: 'Application de visualisation d’images',
-    desc: 'Application desktop permettant la manipulation avancée d’images avec une architecture logicielle propre.',
+    title: t("project2_title"),
+    desc: t("project2_desc"),
     image: projet2,
     tags: ['Java', 'JavaFX', 'MVC', 'Design Patterns'],
     link:'https://github.com/achillektamo-afk/Application-de-visualisation-d-images',
@@ -25,8 +27,8 @@ const Projects = ({darkMode}) => {
 
   {
     id: 3,
-    title: 'Plateforme e-commerce de chaussures',
-    desc: 'Site e-commerce complet avec gestion des utilisateurs et des commandes.',
+    title: t("project3_title"),
+    desc: t("project3_desc"),
     image: projet3,
     tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     link:'https://github.com/achillektamo-afk/Plateforme-e-commerce-de-chaussures',
@@ -46,7 +48,7 @@ const Projects = ({darkMode}) => {
                 className='text-3xl sm:text-4xl font-bold mb-3'
                 style={{
                     color: darkMode ? 'white' : "#1f2937"
-                }}>My
+                }}>{t("projects_title")}  
                     <span 
                 style={{
                     background:'linear-gradient(to right, #f97316, #f59e0b)',
@@ -54,13 +56,13 @@ const Projects = ({darkMode}) => {
                     backgroundClip:'text',
                     color: 'transparent'
                 }}>
-                    Projets    
+                    {t("projects_highlight")}    
                     </span>
                 </h2>
                 <p className='max-w-xl mx-auto'
                 style={{
                     color: darkMode ? '#d1d5db': '#6b7280'
-                }}> Un aperçu de mes recents travaux</p>
+                }}> {t("projects_description")}</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2
             lg:grid-cols-3 gap-5 mb-12'>
@@ -129,7 +131,7 @@ const Projects = ({darkMode}) => {
                                         data-aos='zoom-in'
                                         data-aos-delay='300'>
                                             <FaGithub className='text-sm'/>
-                                            <span>Code</span>
+                                            <span>{t("code")}</span>
                                     
                                 </a>
                          
@@ -155,7 +157,7 @@ const Projects = ({darkMode}) => {
                                 data-aos='zoom-in'
                                 data-aos-delay='400'>
                                     <FaGithub/>
-                                    <span>Voir Tous Les Projets</span>
+                                    <span>{t("view_projects")}</span>
                                     <FaExternalLinkAlt className='text-sm'/>
                                 </a>
 

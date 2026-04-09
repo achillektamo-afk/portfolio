@@ -1,6 +1,30 @@
 import ContactImg from '../assets/ContactImg.png'
+import { useTranslation } from "react-i18next";
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 const Contact = ({ darkMode }) => {
+  const form = useRef();
+  const { t } = useTranslation();
+  const sendEmail = (e) => {
+  e.preventDefault();
+
+    emailjs.sendForm(
+    'service_2kbe6qc',
+    'template_1htkt59',
+    form.current,
+    'kiKrmVOdd14Q7qANA'
+  )
+  .then((result) => {
+      console.log("SUCCESS:", result.text);
+      alert("Message envoyé ✅");
+      form.current.reset(); // vide le formulaire
+  })
+  .catch((error) => {
+      console.error("ERROR:", error);  // 👈 logs complets
+      alert("Erreur ❌");
+  });
+};
   return (
     <section
     id="contact"
@@ -15,14 +39,14 @@ const Contact = ({ darkMode }) => {
           mb-2 sm:mb-3"
           style={{
             color: darkMode ? 'white' : '#1f2937'
-          }}> Contactez<span
+          }}> {t("contact_title")}<span
           style={{
       background:'linear-gradient(to right, #f97316, #f59e0b)',
       WebkitBackgroundClip:'text',
       backgroundClip:'text',
       color:'transparent'
 
-          }}> Moi</span>
+          }}> {t("contact_highlight")}</span>
 
           </h2>
           <p
@@ -30,7 +54,7 @@ const Contact = ({ darkMode }) => {
           style={{
             color:darkMode ? '#d1d5db' : '#6b7280'
           }}>
-            Discutons De Vos Projet
+            {t("contact_subtitle")}
           </p>
 
         </div>
@@ -44,6 +68,8 @@ const Contact = ({ darkMode }) => {
 
           </div>
           <form
+          ref={form}
+          onSubmit={sendEmail}
           style={{
             background: darkMode
             ? 'linear-gradient(to right, #1f2937, #111827)'
@@ -57,8 +83,9 @@ const Contact = ({ darkMode }) => {
             sm:gap-4 mb-3 sm:mb-4'>
               {/* First Name */}
               <input
+              name="first_name"
               type="text"
-              placeholder='Prenom'
+              placeholder={t("first_name")}
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -71,8 +98,9 @@ const Contact = ({ darkMode }) => {
               required/>
               {/* Last Name */}
               <input
+              name="last_name"
               type="text"
-              placeholder='Nom'
+              placeholder={t("last_name")}
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -87,7 +115,8 @@ const Contact = ({ darkMode }) => {
             </div>
             {/* Email Address */}
             <input
-              type="email"
+              name="email"
+              type='email'
               placeholder='Adresse Mail'
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
@@ -102,8 +131,9 @@ const Contact = ({ darkMode }) => {
               required/>
               {/* Phone Number */}
             <input
+              name="phone" 
               type="tel"
-              placeholder='Numéro De Téléphone'
+              placeholder={t("phone")}
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -117,8 +147,9 @@ const Contact = ({ darkMode }) => {
               required/>
                {/*  Message */}
             <textarea
+              name="message"
               rows='4'
-              placeholder='Votre Message'
+              placeholder={t("message")}
               style={{
                 backgroundColor: darkMode ? '#374151' : '#faede3',
                 borderColor: darkMode ? '#4b5563' : '#d1d5db',
@@ -139,7 +170,7 @@ const Contact = ({ darkMode }) => {
               font--semibold rounded-lg text-sm sm:text-base
               hover:shadow-lg hover:shadow-orange-500/25
               hover:scale-[1.02] transition-all'>
-                Envoyez Votre Message
+                {t("send_message")}
 
               </button>
 

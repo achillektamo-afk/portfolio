@@ -1,7 +1,9 @@
 import React from 'react'
 import about from '../assets/About.png'
+import { useTranslation } from "react-i18next";
 
 const About = ({darkMode}) => {
+  const { t } = useTranslation();
   return (
     <section id='about' className={`min-h-screen overflow-hidden flex 
     items-center justify-center px-4 sm:px-6${
@@ -46,7 +48,7 @@ const About = ({darkMode}) => {
             to-orange-600 bg-clip-text'
             data-aos='fade-up'
             data-aos-delay='400'>
-              A propos de moi
+              {t("about_title")}
             </h1>
           </header>
           <p className={` text-sm sm:text-base lg:text-lg
@@ -57,19 +59,7 @@ const About = ({darkMode}) => {
             ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
             data-aos='fade-up'
             data-aos-delay='500'>
-              Je suis titulaire d’un DEC en informatique de gestion
-               et passionné par le développement web. Curieux et motivé, 
-               j’aime apprendre continuellement et relever de nouveaux défis
-                pour améliorer mes compétences.
-
-              Au fil de mes projets, j’ai développé des bases solides en 
-              programmation, notamment en création d’applications web modernes et 
-              interactives. J’accorde une attention particulière à la qualité du 
-              code, à l’expérience utilisateur et à la performance.
-
-              Mon objectif est de continuer à évoluer dans le domaine du développement, 
-              collaborer sur des projets concrets et apporter des solutions efficaces 
-              et innovantes.
+              {t("about_description")}
           </p>
           <div
           className='flex flex-wrap justify-center
@@ -83,7 +73,7 @@ const About = ({darkMode}) => {
               lg:text-4xl font-bold text-orange-400'>5+</div>
               <div className={`text-xs sm:text-sm lg:text-base
           ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >Education</div>
+              >{t("education")}</div>
 
             </div>
              {/* Years Experience */}
@@ -94,7 +84,7 @@ const About = ({darkMode}) => {
               lg:text-4xl font-bold text-orange-400'>5+</div>
               <div className={`text-xs sm:text-sm lg:text-base
           ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >Année Experience</div>
+              >{t("experience")}</div>
 
             </div>
              {/* Projects Completed */}
@@ -105,25 +95,13 @@ const About = ({darkMode}) => {
               lg:text-4xl font-bold text-orange-400'>50+</div>
               <div className={`text-xs sm:text-sm lg:text-base
           ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
-              >Projets Terminés
+              >{t("projects_completed")}
               </div>
 
             </div>
 
           </div>
-          <button className={`w-full sm:w-auto border-2
-            border-orange-500 inline-flex items-center
-            justify-center py-2 px-4 sm:px-6
-            hover:shadow-[0_0_40px_rgba(255,165,0,0.7)]
-            rounded-full text-base sm:text-lg font-semibold
-            transition-all duration-300 transform
-            ${darkMode
-            ? 'text-white bg-orange-500/10'
-            : 'text-gray-800 bg-white/90'}`}
-            data-aos='fade-up'
-            data-aos-delay='800'>
-            En Savoir Plus
-          </button>
+         
 
         </article>
       </div>
